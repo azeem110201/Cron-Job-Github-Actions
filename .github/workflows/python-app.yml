@@ -5,7 +5,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: "0 5 * * 1,2,3,4,5"
+    - cron: "30 * * * *"
 
 jobs:
   cron:
@@ -17,5 +17,4 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.8"
-    - run: echo "Hello, World"    
     - run: python app.py    

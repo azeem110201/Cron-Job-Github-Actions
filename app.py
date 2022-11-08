@@ -1,6 +1,19 @@
-def getDetails(name: str, age: int) -> str:
-    return f'My name is {name} and age is {age} years'
+import requests
+import smtplib
 
-print(getDetails("Azeem", 21))
+headers = {'Accept': 'application/json'}
 
-print(getDetails("John", 22))
+server = smtplib.SMTP('smtp.gmail.com', 587)
+
+server.starttls()
+
+server.login('dossierbootcamp57@gmail.com', 'izorvmsqxlzridtt')
+
+response = requests.get('https://api.coincap.io/v2/assets/bitcoin', headers=headers)
+
+timestamp = response.json()['timestamp']
+price = response.json()['data']['priceUsd']
+
+server.sendmail('dossierbootcamp57@gmail.com', 'mohd.abazeemabazeem@gmail.com', f'Todays bitcoin price is as on {timestamp} is {price}')
+
+print('Mail sent successfully')
