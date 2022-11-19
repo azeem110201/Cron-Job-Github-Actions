@@ -1,4 +1,4 @@
 # Cron-Job-Github-Actions
 Setting up CI for cron jobs
 
-One Cron job is has been setup in the workflows files and it runs every specific time which is provided in the file. 
+Cron Job which run every day except Sunday at 6:30AM UTC time and fetches the bitcoin price and mail me
